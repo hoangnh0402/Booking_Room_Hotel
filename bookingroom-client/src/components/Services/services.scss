@@ -1,0 +1,57 @@
+.booking-servies {
+  display: flex;
+  border: 1px solid black;
+  box-shadow: 3px 0 5px 0 hsl(0deg 0% 59% / 23%);
+  cursor: pointer;
+  padding: 12px;
+  border: 1px solid #d5d5d5;
+  border-radius: 0;
+  height: 300px;
+
+  .booking-servies__left {
+    width: 40%;
+    height: 100%;
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .booking-servies__right {
+    width: 60%;
+    position: relative;
+    margin-left: 18px;
+    h4 {
+      font-size: 1.56rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-family: "Dosis", sans-serif;
+      font-size: 1.13rem;
+      color: #4a4a4a;
+      word-wrap: break-word;
+    }
+
+    h6 {
+      position: absolute;
+      font-weight: bold;
+      right: 30px;
+      bottom: 30px;
+      font-size: 20px;
+    }
+
+    div {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+    }
+
+    // button {
+    //   position: absolute;
+    //   left: 20px;
+    //   bottom: 10px;
+    // }
+  }
+}

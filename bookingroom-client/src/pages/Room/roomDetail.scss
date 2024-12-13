@@ -1,0 +1,36 @@
+.star-evaluation.fa-star:hover {
+  color: #f5b917 !important;
+  cursor: pointer;
+}
+.star-evaluation.fa-star {
+  margin-right: 4px;
+}
+
+.star {
+  position: relative;
+  margin-top: 25px;
+  padding-top: 14px;
+  padding-right: 33px;
+  transition: all 0.2s;
+
+  input {
+    cursor: pointer;
+    margin-right: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+
+    &::before {
+      color: #fff;
+      content: "\f005";
+      font-family: fontAwesome;
+      font-size: 17px;
+    }
+  }
+
+  input:hover ~ input::before,
+  input:hover::before,
+  input:checked ~ input::before,
+  input:checked::before {
+    color: #f5b917;
+  }
+}

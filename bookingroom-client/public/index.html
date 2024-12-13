@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>React App</title>
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/bootstrap.min.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/font-awesome.min.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/elegant-icons.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/flaticon.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/nice-select.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/magnific-popup.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/slicknav.min.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/admin/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/style.css">
+
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!-- Messenger Plugin chat Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your Plugin chat code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "114558108271381");
+    chatbox.setAttribute("attribution", "biz_inbox");
+  </script>
+
+  <!-- Your SDK code -->
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml            : true,
+        version          : 'v16.0'
+      });
+    };
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+</body>
+<script src="%PUBLIC_URL%/js/jquery-3.3.1.min.js"></script>
+
+</html>
