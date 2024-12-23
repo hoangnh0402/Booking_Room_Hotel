@@ -10,15 +10,15 @@ const About = () => {
             <div className="about-text">
               <div className="section-title">
                 <span>About Us</span>
-                <h2>Thanh Huong Hotel</h2>
+                <h2>HIT Hotel</h2>
               </div>
               <p className="f-para">
-                Thanh Huong Hotel nơi cung cấp các phòng nghỉ tiện nghi, sang
+                HIT Hotel nơi cung cấp các phòng nghỉ tiện nghi, sang
                 trọng và các dịch vụ tiện ích cho quý khách hàng khi trải nghiệm
                 dừng chân tại đây.
               </p>
               <p className="s-para">
-                Định hướng của Thanh Huong Hotel mong muốn trở thành khách sạn
+                Định hướng của HIT Hotel mong muốn trở thành khách sạn
                 đáng tin cậy đối với khách hàng, chủ sở hữu, nhân viên và cộng
                 đồng với các dịch vụ tận tình và chu đáo mang lại sự thư giãn và
                 thoải mái nhất.

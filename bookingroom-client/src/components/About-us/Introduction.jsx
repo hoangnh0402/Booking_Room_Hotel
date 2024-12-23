@@ -10,11 +10,11 @@ const Introduction = () => {
           <div className="row">
             <div className="col-lg-6">
               <div className="ap-title">
-                <h2>Welcome To Thanh Huong Hotel.</h2>
+                <h2>Welcome To HIT Hotel.</h2>
                 <p>
-                  Thanh Huong Hotel nơi cung cấp các phòng nghỉ tiện nghi, sang
+                  HIT Hotel nơi cung cấp các phòng nghỉ tiện nghi, sang
                   trọng và các dịch vụ tiện ích cho quý khách hàng khi trải
-                  nghiệm dừng chân tại đây .Định hướng của Thanh Huong Hotel
+                  nghiệm dừng chân tại đây .Định hướng của HIT Hotel
                   mong muốn trở thành khách sạn đáng tin cậy đối với khách hàng,
                   chủ sở hữu, nhân viên và cộng đồng với các dịch vụ tận tình và
                   chu đáo mang lại sự thư giãn và thoải mái nhất.

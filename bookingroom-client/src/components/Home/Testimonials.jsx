@@ -30,7 +30,7 @@ const Testimonials = () => {
                   phòng , các dịch vụ cung cấp khá đầy đủ và hấp dẫn đối với
                   thực khách. Tôi nghĩ sẽ thuận tiện hơn khi các bạn bổ sung
                   thêm các chức năng mới hơn nâng cao chất lượng cho khách khi
-                  đặt phòng tại Thanh Huong Hotel!
+                  đặt phòng tại HIT Hotel!
                 </p>
                 <div className="ti-author">
                   <div className="rating">
@@ -40,7 +40,7 @@ const Testimonials = () => {
                     <i className="icon_star" />
                     <i className="icon_star-half_alt" />
                   </div>
-                  <h5> - Huong Nguyen</h5>
+                  <h5> - Hina Nguyen</h5>
                 </div>
                 <img src={TestimonialLogo} alt="" />
               </div>
@@ -50,7 +50,7 @@ const Testimonials = () => {
                   phòng , các dịch vụ cung cấp khá đầy đủ và hấp dẫn đối với
                   thực khách. Tôi nghĩ sẽ thuận tiện hơn khi các bạn bổ sung
                   thêm các chức năng mới hơn nâng cao chất lượng cho khách khi
-                  đặt phòng tại Thanh Huong Hotel!
+                  đặt phòng tại HIt Hotel!
                 </p>
                 <div className="ti-author">
                   <div className="rating">
@@ -60,7 +60,7 @@ const Testimonials = () => {
                     <i className="icon_star" />
                     <i className="icon_star-half_alt" />
                   </div>
-                  <h5> - Huong Nguyen</h5>
+                  <h5> - Hina Nguyen</h5>
                 </div>
                 <img src={TestimonialLogo} alt="" />
               </div>

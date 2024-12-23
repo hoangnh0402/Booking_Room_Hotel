@@ -24,11 +24,11 @@ const Header = () => {
             <div className="col-lg-6">
               <ul className="tn-left">
                 <li>
-                  <i className="fa fa-phone" /> 0-842343
+                  <i className="fa fa-phone" /> +84379327548
                 </li>
                 <li>
                   <i className="fa fa-envelope" />{" "}
-                  thanhhuonghotelluxury@gmail.com
+                  nguyenhuyhoangpt0402@gmail.com
                 </li>
               </ul>
             </div>
