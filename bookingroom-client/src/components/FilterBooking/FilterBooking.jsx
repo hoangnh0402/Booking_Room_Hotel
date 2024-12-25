@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import './filterBooking.scss'
+import ScrollTop from '../ScrollTop/ScrollTop'
 
 function FilterBooking({ filter }) {
   const setDateFormat = (date, status) => {
@@ -138,6 +139,7 @@ function FilterBooking({ filter }) {
         style={{ backgroundColor: '#5892b5 !important' }}>
         Check available
       </button>
+      <ScrollTop />
     </div>
   )
 }

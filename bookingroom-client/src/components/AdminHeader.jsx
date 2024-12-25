@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import logo from '../assets/img/logo-hotel.png'
+import logo from '../assets/img/hit-hotel.jpg'
 import logout from '../assets/img/admin/log-out.png'
 import { Link } from 'react-router-dom'
 import storageService from '../services/storage.service'
@@ -13,7 +13,7 @@ const AdminHeader = () => {
     <div className='header' style={{ backgroundColor: '#F8F9FE' }}>
       <div className='header-left active' style={{ display: 'flex', justifyContent: 'center' }}>
         <Link className='logo' to='/'>
-          <img src={logo} alt='' style={{ width: '100px' }} />
+          <img src={logo} alt='' style={{ width: '140px' }} />
         </Link>
         <Link className='logo-small' to='/'>
           <img src={logo} alt='' />
