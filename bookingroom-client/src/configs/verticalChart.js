@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -7,32 +6,25 @@ import {
   Title,
   Tooltip,
   Legend,
-} from "chart.js";
-import { faker } from "@faker-js/faker";
+} from 'chart.js'
+import { faker } from '@faker-js/faker'
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 export const verticalOptions = {
   responsive: true,
   plugins: {
     legend: {
-      position: "top",
+      position: 'top',
     },
     title: {
       display: true,
-      text: "Chart.js Bar Chart",
+      text: 'Chart.js Bar Chart',
     },
   },
-};
+}
 
-const labels = ["1"];
+const labels = ['1']
 
 export const verticalData = {
   labels,
@@ -40,52 +32,52 @@ export const verticalData = {
     {
       label: 1,
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
     },
     {
-      label: "Dataset 2",
+      label: 'Dataset 2',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
     {
-      label: "Dataset 3",
+      label: 'Dataset 3',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
     {
-      label: "Dataset 4",
+      label: 'Dataset 4',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
     {
-      label: "Dataset 5",
+      label: 'Dataset 5',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
     {
-      label: "Dataset 6",
+      label: 'Dataset 6',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
     {
-      label: "Dataset 7",
+      label: 'Dataset 7',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
     {
-      label: "Dataset 8",
+      label: 'Dataset 8',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
     {
-      label: "Dataset 9",
+      label: 'Dataset 9',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
     {
-      label: "Dataset 10",
+      label: 'Dataset 10',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
   ],
-};
+}

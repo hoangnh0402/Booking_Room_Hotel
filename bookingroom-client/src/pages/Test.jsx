@@ -3,9 +3,7 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 
 const Test = () => {
-  const [inputValue, setInputValue] = useState("");
   const [page, setPage] = useState(1);
-  const [photos, setPhotos] = useState([]);
   const pageRef = useRef([]);
 
   useEffect(() => {

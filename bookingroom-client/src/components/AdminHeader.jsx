@@ -2,7 +2,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import logo from '../assets/img/logo-hotel.png'
-import avatar from '../assets/img/avatar.jpg'
 import logout from '../assets/img/admin/log-out.png'
 import { Link } from 'react-router-dom'
 import storageService from '../services/storage.service'
@@ -40,7 +39,7 @@ const AdminHeader = () => {
           </a>
           <div
             style={{
-              display: isBlock == true ? 'block' : 'none',
+              display: isBlock === true ? 'block' : 'none',
               top: '-70%',
               left: '-100%',
             }}

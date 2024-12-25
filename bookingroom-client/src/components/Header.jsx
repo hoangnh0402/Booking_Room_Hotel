@@ -1,8 +1,6 @@
-import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
-import avatar from '../assets/img/avatar.jpg'
 import storageService from '../services/storage.service'
 import logo from '../assets/img/logo-hotel.png'
 
@@ -54,7 +52,7 @@ const Header = () => {
                           <li style={{ padding: '8px' }}>
                             <Link to='/user'>My Account</Link>
                           </li>
-                          {user.roleName == 'ROLE_ADMIN' && (
+                          {user.roleName === 'ROLE_ADMIN' && (
                             <li style={{ padding: '8px' }}>
                               <Link to='/admin/users'>Manament</Link>
                             </li>
@@ -94,13 +92,13 @@ const Header = () => {
               <div className='nav-menu'>
                 <nav className='mainmenu'>
                   <ul>
-                    <li className={pathName == '/' ? 'active' : ''}>
+                    <li className={pathName === '/' ? 'active' : ''}>
                       <Link to={'/'}>HOME</Link>
                     </li>
-                    <li className={pathName == '/rooms' ? 'active' : ''}>
+                    <li className={pathName === '/rooms' ? 'active' : ''}>
                       <Link to={'/rooms'}>ROOMS</Link>
                     </li>
-                    <li className={pathName == '/about-us' ? 'active' : ''}>
+                    <li className={pathName === '/about-us' ? 'active' : ''}>
                       <Link to={'/about-us'}>ABOUT US</Link>
                     </li>
                     <li>

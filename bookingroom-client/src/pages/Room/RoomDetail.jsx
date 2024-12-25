@@ -1,9 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Title from '../../components/Title'
-import roomDetail from '../../assets/img/room/room-details.jpg'
-import reviewer from '../../assets/img/room/avatar/avatar-1.jpg'
 import Header from '../../components/Header'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import {  useNavigate, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { unwrapResult } from '@reduxjs/toolkit'
@@ -13,7 +11,6 @@ import {
   fetchRatingByRoomId,
 } from '../../store/roomSlice/roomSlice'
 import './roomDetail.scss'
-import OwlCarousel from 'react-owl-carousel'
 
 const RoomDetail = () => {
   let { roomId } = useParams()
