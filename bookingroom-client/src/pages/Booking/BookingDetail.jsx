@@ -59,13 +59,13 @@ const BookingDetail = () => {
               <div class="mb-5">
                 <h4>
                   Thanks {user && user?.firstName?.concat(" " + user?.lastName)}{" "}
-                  , Đặt phòng của bạn ở Thanh Hương hotel đã được nhận , Chúng
+                  , Đặt phòng của bạn ở HIT hotel đã được nhận , Chúng
                   tôi mong rằng bạn sẽ đến check-in đúng giờ theo quy định của
-                  khách sạn và có những trải nghiệm tuyệt vời ở Thanh Hương
+                  khách sạn và có những trải nghiệm tuyệt vời ở HIT
                   hotel. Cảm ơn bạn rất nhiều và hẹn gặp lại !
                 </h4>
                 <h2>
-                  Mọi thông tin chi tiết xin liên hệ với hotline: 0325529034
+                  Mọi thông tin chi tiết xin liên hệ với hotline: 0379327548
                 </h2>
                 <ul style={{ fontSize: "20px" }}>
                   {/* <li>Chúng tôi đã ..... </li>
