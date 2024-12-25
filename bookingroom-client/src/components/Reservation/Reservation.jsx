@@ -201,7 +201,7 @@ const Reservation = ({
                 .then(unwrapResult)
                 .then((originalPromiseResult) => {
                   console.log(originalPromiseResult);
-                  if (originalPromiseResult.status == "SUCCESS") {
+                  if (originalPromiseResult.status === "SUCCESS") {
                     Swal.fire("Đặt phòng thành công", "", "success");
                     setTimeout(() => {
                       window.location.href = "/booking-cart";

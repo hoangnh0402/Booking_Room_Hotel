@@ -1,6 +1,7 @@
 import aboutUs1 from '../../assets/img/about/about-p1.jpg'
 import aboutUs2 from '../../assets/img/about/about-p2.jpg'
 import aboutUs3 from '../../assets/img/about/about-p3.jpg'
+import ScrollTop from '../ScrollTop/ScrollTop'
 import './Introduction.scss'
 const Introduction = () => {
   return (
@@ -99,7 +100,7 @@ const Introduction = () => {
           </div>
         </div>
       </section>
-      {/* <ScrollTop /> */}
+      <ScrollTop />
     </>
   )
 }
