@@ -55,7 +55,7 @@ const Booking = () => {
             />
           </main>
           <aside className="col-md-4">
-            <section className="mb-4">
+            {/* <section className="mb-4">
               <img src="/images/coco-drink.png" width="300" alt="" />
               <h2 className="text-uppercase font-weight-bold">
                 TODAY ONLY: 10% OFF
@@ -65,7 +65,7 @@ const Booking = () => {
                 exclusive <strong>10% discount</strong> on your stay.
               </p>
               <button className="btn btn-primary text-uppercase">Enjoy</button>
-            </section>
+            </section> */}
             <Reservation
               expectedCheckIn={expectedCheckIn}
               expectedCheckOut={expectedCheckOut}

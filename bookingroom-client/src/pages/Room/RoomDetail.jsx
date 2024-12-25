@@ -1,161 +1,151 @@
-import Title from "../../components/Title";
-import roomDetail from "../../assets/img/room/room-details.jpg";
-import reviewer from "../../assets/img/room/avatar/avatar-1.jpg";
-import Header from "../../components/Header";
-import { Link, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { unwrapResult } from "@reduxjs/toolkit";
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import Title from '../../components/Title'
+import roomDetail from '../../assets/img/room/room-details.jpg'
+import reviewer from '../../assets/img/room/avatar/avatar-1.jpg'
+import Header from '../../components/Header'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { unwrapResult } from '@reduxjs/toolkit'
 import {
   fetchGetRoom,
   fetchPostRoomRating,
   fetchRatingByRoomId,
-} from "../../store/roomSlice/roomSlice";
-import "./roomDetail.scss";
-import OwlCarousel from "react-owl-carousel";
+} from '../../store/roomSlice/roomSlice'
+import './roomDetail.scss'
+import OwlCarousel from 'react-owl-carousel'
 
 const RoomDetail = () => {
-  let { roomId } = useParams();
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.value);
-
-  const [room, setRoom] = useState({});
-  const [roomRating, setRoomRating] = useState([]);
-  const [star, setStar] = useState(0);
-  const [comment, setComment] = useState("");
+  let { roomId } = useParams()
+  const dispatch = useDispatch()
+  const user = useSelector((state) => state.user.value)
+  const navigate = useNavigate()
+  const [room, setRoom] = useState({})
+  const [roomRating, setRoomRating] = useState([])
+  const [star, setStar] = useState(0)
+  const [comment, setComment] = useState('')
 
   let checkValidTime = (dayStart, dayEnd) => {
-    return (
-      new Date(dayStart).getTime() <= Date.now() &&
-      new Date(dayEnd).getTime() >= Date.now()
-    );
-  };
+    return new Date(dayStart).getTime() <= Date.now() && new Date(dayEnd).getTime() >= Date.now()
+  }
 
-  const d = new Date();
-  const day = d.getDate();
-  const month = d.getMonth();
-  const year = d.getFullYear();
+  const d = new Date()
+  const day = d.getDate()
+  const month = d.getMonth()
+  const year = d.getFullYear()
 
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       const result = await dispatch(fetchGetRoom(roomId))
         .then(unwrapResult)
         .then((originalPromiseResult) => {
-          setRoom(originalPromiseResult.data);
-          console.log(originalPromiseResult.data);
+          setRoom(originalPromiseResult.data)
+          console.log(originalPromiseResult.data)
           // console.log(originalPromiseResult.data);
         })
         .catch((rejectedValueOrSerializedError) => {
-          console.log(rejectedValueOrSerializedError);
+          console.log(rejectedValueOrSerializedError)
           // handle result here
-        });
+        })
       const result2 = await dispatch(fetchRatingByRoomId(roomId))
         .then(unwrapResult)
         .then((originalPromiseResult) => {
-          setRoomRating(originalPromiseResult.data.items);
-          console.log(originalPromiseResult.data.items);
+          setRoomRating(originalPromiseResult.data.items)
+          console.log(originalPromiseResult.data.items)
         })
         .catch((rejectedValueOrSerializedError) => {
-          console.log(rejectedValueOrSerializedError);
+          console.log(rejectedValueOrSerializedError)
           // handle result here
-        });
-    })();
-  }, [roomId]);
+        })
+    })()
+  }, [roomId])
 
   const handleEvaluate = (star) => {
-    setStar(5 - star);
-  };
+    setStar(5 - star)
+  }
 
   const oldStars = (star) => {
-    let ans = [];
+    let ans = []
 
     for (let i = 0; i < 5; i++) {
       ans.push(
-        <i
-          style={{ color: i < star ? "#f5b917" : "" }}
-          class="fa-sharp fa-regular fa-star"
-        ></i>
-      );
+        <i style={{ color: i < star ? '#f5b917' : '' }} class='fa-sharp fa-regular fa-star'></i>,
+      )
     }
 
-    return ans;
-  };
+    return ans
+  }
 
-  const stars = (borderColor = "black") => {
-    let ans = [];
+  const stars = (borderColor = 'black') => {
+    let ans = []
     for (let i = 0; i < 5; i++) {
       ans.push(
         <input
           style={{ borderColor }}
-          type="radio"
-          name="star"
+          type='radio'
+          name='star'
           onClick={() => {
-            handleEvaluate(i);
+            handleEvaluate(i)
           }}
-        />
-      );
+        />,
+      )
     }
-    return ans;
-  };
+    return ans
+  }
 
   const handleComment = async () => {
     const result = await dispatch(
       fetchPostRoomRating({
         crateRoomRatingDto: { star, comment },
         roomId: roomId,
-      })
+      }),
     )
       .then(unwrapResult)
       .then((originalPromiseResult) => {
         // setComment((prev) => [...prev, originalPromiseResult.data]);
-        setStar("");
-        setComment("");
+        setStar('')
+        setComment('')
         // console.log(originalPromiseResult);
-        setRoomRating([...roomRating, originalPromiseResult.data]);
+        setRoomRating([...roomRating, originalPromiseResult.data])
         // console.log(originalPromiseResult);
       })
       .catch((rejectedValueOrSerializedError) => {
-        console.log(rejectedValueOrSerializedError);
+        console.log(rejectedValueOrSerializedError)
         // handle result here
-      });
-  };
+      })
+  }
 
   return (
     <div>
       <Header />
-      {Title("Our Rooms", "Rooms")}
+      {Title('Our Rooms', 'Rooms')}
       {/* Breadcrumb Section End */}
       {/* Rooms Section Begin */}
-      <section className="room-details-section spad">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8">
-              <div className="room-details-item">
+      <section className='room-details-section spad'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-lg-8'>
+              <div className='room-details-item'>
                 <OwlCarousel
                   style={{
                     // position: "absolute",
-                    top: "0",
-                    width: "100%",
+                    top: '0',
+                    width: '100%',
                   }}
-                  className="owl-main hero-slider"
+                  className='owl-main hero-slider'
                   items={1}
-                  loop
-                >
+                  loop>
                   {room?.medias?.map((media) => {
                     return (
-                      <div className="item hs-item set-bg">
-                        <img
-                          style={{ width: "100%", height: "450px" }}
-                          src={media.url}
-                          alt=""
-                        />
+                      <div className='item hs-item set-bg'>
+                        <img style={{ width: '100%', height: '450px' }} src={media.url} alt='' />
                         {/* <img
                           style={{ height: "250px", width: "100%" }}
                           src={media.url}
                           alt=""
                         /> */}
                       </div>
-                    );
+                    )
                   })}
                 </OwlCarousel>
                 {/* <img
@@ -163,77 +153,65 @@ const RoomDetail = () => {
                   src={room && room.medias?.[0]?.url}
                   alt=""
                 /> */}
-                <div className="rd-text">
-                  <div className="rd-title">
-                    <h3 style={{ fontSize: "24px" }}>{room.name}</h3>
-                    <div className="rdt-right">
-                      <div className="rating">
-                        <i className="icon_star" />
-                        <i className="icon_star" />
-                        <i className="icon_star" />
-                        <i className="icon_star" />
-                        <i className="icon_star-half_alt" />
+                <div className='rd-text'>
+                  <div className='rd-title'>
+                    <h3 style={{ fontSize: '24px' }}>{room.name}</h3>
+                    <div className='rdt-right'>
+                      <div className='rating'>
+                        <i class='fas fa-star'></i>
+                        <i class='fas fa-star'></i>
+                        <i class='fas fa-star'></i>
+                        <i class='fas fa-star'></i>
+                        <i class='fas fa-star-half'></i>
                       </div>
-                      <Link to="/booking">Booking Now</Link>
+                      <button onClick={() => navigate('/booking')} className='room-detail__booking'>
+                        Đặt ngay
+                      </button>
                     </div>
                   </div>
                   <h2>
-                    <div style={{ display: "flex" }}>
+                    <div style={{ display: 'flex' }}>
                       <h3
                         style={{
-                          color: checkValidTime(
-                            room.sale?.dayStart,
-                            room.sale?.dayEnd
-                          )
-                            ? "rgba(0,0,0,.54)"
-                            : "#5892b5",
-                          textDecoration: checkValidTime(
-                            room.sale?.dayStart,
-                            room.sale?.dayEnd
-                          )
-                            ? "line-through"
-                            : "none",
-                        }}
-                      >
+                          color: checkValidTime(room.sale?.dayStart, room.sale?.dayEnd)
+                            ? 'rgba(0,0,0,.54)'
+                            : '#5892b5',
+                          textDecoration: checkValidTime(room.sale?.dayStart, room.sale?.dayEnd)
+                            ? 'line-through'
+                            : 'none',
+                        }}>
                         {room &&
-                          room?.price?.toLocaleString("it-IT", {
-                            style: "currency",
-                            currency: "VND",
+                          room?.price?.toLocaleString('it-IT', {
+                            style: 'currency',
+                            currency: 'VND',
                           })}
                       </h3>
-                      {checkValidTime(
-                        room.sale?.dayStart,
-                        room.sale?.dayEnd
-                      ) && (
-                        <h3 style={{ marginLeft: "12px", color: "#5892b5" }}>
+                      {checkValidTime(room.sale?.dayStart, room.sale?.dayEnd) && (
+                        <h3 style={{ marginLeft: '12px', color: '#5892b5' }}>
                           {room &&
                             (
                               room.price -
                               (room.price * room.sale.salePercent) / 100
-                            ).toLocaleString("it-IT", {
-                              style: "currency",
-                              currency: "VND",
+                            ).toLocaleString('it-IT', {
+                              style: 'currency',
+                              currency: 'VND',
                             })}
                         </h3>
                       )}
                     </div>
                     {room.sale?.salePercent != null &&
-                      checkValidTime(
-                        room.sale?.dayStart,
-                        room.sale?.dayEnd
-                      ) && (
+                      checkValidTime(room.sale?.dayStart, room.sale?.dayEnd) && (
                         <h4
                           style={{
-                            position: "absolute",
-                            top: "12px",
-                            right: "15px",
-                            fontSize: "24px !important",
-                            color: "rgb(88, 146, 181)",
-                            fontWeight: "bold",
+                            position: 'absolute',
+                            top: '12px',
+                            right: '15px',
+                            fontSize: '24px !important',
+                            color: 'rgb(88, 146, 181)',
+                            fontWeight: 'bold',
                             zIndex: 1,
-                            background: "white",
-                          }}
-                        >
+                            background: 'white',
+                          }}>
                           Giảm giá {room.sale.salePercent} %
                         </h4>
                       )}
@@ -241,156 +219,145 @@ const RoomDetail = () => {
                   <table>
                     <tbody>
                       <tr>
-                        <td className="r-o">Type:</td>
+                        <td className='r-o'>Type:</td>
                         <td>{room.type}</td>
                       </tr>
                       <tr>
-                        <td className="r-o">Capacity:</td>
+                        <td className='r-o'>Capacity:</td>
                         <td>Max persion {room.capacity}</td>
                       </tr>
                       <tr>
-                        <td className="r-o">Bed:</td>
+                        <td className='r-o'>Bed:</td>
                         <td>{room.bed}</td>
                       </tr>
                       <tr>
-                        <td className="r-o">Size:</td>
+                        <td className='r-o'>Size:</td>
                         <td>{room.size}</td>
                       </tr>
                     </tbody>
                   </table>
-                  <p className="f-para">{room.description}</p>
+                  <p className='f-para'>{room.description}</p>
+                  <div className='room-detail__services'>
+                    <p>
+                      <strong style={{ fontWeight: 'bold' }}>Các tiện ích đi kèm: </strong>
+                      {room.services}
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div className="rd-reviews">
+              <div className='rd-reviews'>
                 <h4>Reviews</h4>
                 {roomRating &&
                   roomRating.map((rating) => (
-                    <div className="review-item">
-                      <div style={{}} className="evaluate">
-                        <div className="star flex flex-row-reverse">
-                          {oldStars(rating.star)}
-                        </div>
+                    <div className='review-item'>
+                      <div style={{}} className='evaluate'>
+                        <div className='star flex flex-row-reverse'>{oldStars(rating.star)}</div>
 
                         <p
                           style={{
-                            fontSize: "18px",
-                            fontWeight: "400",
-                            textAlign: "center",
-                            paddingBottom: "12px",
-                          }}
-                        ></p>
+                            fontSize: '18px',
+                            fontWeight: '400',
+                            textAlign: 'center',
+                            paddingBottom: '12px',
+                          }}></p>
                       </div>
-                      <div className="ri-pic">
-                        <img src={rating.createdBy?.avatar} alt="" />
+                      <div className='ri-pic'>
+                        <img src={rating.createdBy?.avatar} alt='' />
                       </div>
-                      <div className="ri-text">
+                      <div className='ri-text'>
                         {/* <span>27 Aug 2019</span> */}
-                        <div className="rating">
-                          <i className="icon_star" />
-                          <i className="icon_star" />
-                          <i className="icon_star" />
-                          <i className="icon_star" />
-                          <i className="icon_star-half_alt" />
+                        <div className='rating'>
+                          <i class='fas fa-star'></i>
+                          <i class='fas fa-star'></i>
+                          <i class='fas fa-star'></i>
+                          <i class='fas fa-star'></i>
+                          <i class='fas fa-star-half'></i>
                         </div>
                         <h5>
-                          {rating.createdBy?.lastName.concat(
-                            " " + rating.createdBy.firstName
-                          )}
+                          {rating.createdBy?.lastName.concat(' ' + rating.createdBy.firstName)}
                         </h5>
                         <p>{rating.comment}</p>
                       </div>
                     </div>
                   ))}
               </div>
-              <div className="rd-reviews">
+              <div className='rd-reviews'>
                 <h4>Add Review</h4>
-                <div
-                  style={{ display: "flex", alignItems: "center" }}
-                  className="review-item"
-                >
+                <div style={{ display: 'flex', alignItems: 'center' }} className='review-item'>
                   <h5>You Rating:</h5>
-                  <div style={{ marginLeft: "44px" }} className="evaluate">
-                    <div className="star flex flex-row-reverse">{stars()}</div>
+                  <div style={{ marginLeft: '44px' }} className='evaluate'>
+                    <div className='star flex flex-row-reverse '>{stars()}</div>
 
                     <p
                       style={{
-                        fontSize: "18px",
-                        fontWeight: "400",
-                        textAlign: "center",
-                        paddingBottom: "12px",
-                      }}
-                    ></p>
+                        fontSize: '18px',
+                        fontWeight: '400',
+                        textAlign: 'center',
+                        paddingBottom: '12px',
+                      }}></p>
                   </div>
                 </div>
-                <div className="review-item">
-                  <div className="ri-pic">
-                    <img
-                      src={Object.keys(user).length > 0 && user.avatar}
-                      alt=""
-                    />
+                <div className='review-item'>
+                  <div className='ri-pic'>
+                    <img src={Object.keys(user).length > 0 && user.avatar} alt='' />
                   </div>
-                  <div className="ri-text">
-                    <span>{day + "/" + (month + 1) + "/" + year}</span>
-                    <div className="rating">
-                      <i className="icon_star" />
-                      <i className="icon_star" />
-                      <i className="icon_star" />
-                      <i className="icon_star" />
-                      <i className="icon_star-half_alt" />
+                  <div className='ri-text'>
+                    <span>{day + '/' + (month + 1) + '/' + year}</span>
+                    <div className='rating'>
+                      <i class='fas fa-star'></i>
+                      <i class='fas fa-star'></i>
+                      <i class='fas fa-star'></i>
+                      <i class='fas fa-star'></i>
+                      <i class='fas fa-star-half'></i>
                     </div>
                     <h5>
-                      {Object.keys(user).length > 0 &&
-                        user.lastName.concat(" " + user.firstName)}
+                      {Object.keys(user).length > 0 && user.lastName.concat(' ' + user.firstName)}
                     </h5>
                     <textarea
                       style={{
-                        width: "100%",
-                        padding: "12px",
-                        borderColor: "#E5E5E5",
+                        width: '100%',
+                        padding: '12px',
+                        borderColor: '#E5E5E5',
                       }}
                       value={comment}
                       onChange={(e) => setComment(e.target.value)}
-                      placeholder="Your Review"
+                      placeholder='Your Review'
                     />
                   </div>
                 </div>
                 <a
                   style={{
-                    display: "inline-block",
-                    color: "#ffffff",
-                    fontSize: "13px",
-                    textTransform: "uppercase",
+                    display: 'inline-block',
+                    color: '#ffffff',
+                    fontSize: '13px',
+                    textTransform: 'uppercase',
                     fontWeight: 700,
-                    background: "#5892b5",
-                    padding: "14px 28px 13px",
+                    background: '#5892b5',
+                    padding: '14px 28px 13px',
                   }}
-                  onClick={handleComment}
-                >
+                  onClick={handleComment}>
                   Submit Now
                 </a>
               </div>
             </div>
-            <div className="col-lg-4">
-              <div className="room-booking">
+            <div className='col-lg-4'>
+              <div className='room-booking'>
                 <h3>Your Reservation</h3>
-                <form action="#">
-                  <div className="check-date">
-                    <label htmlFor="date-in">Check In:</label>
-                    <input type="text" className="date-input" id="date-in" />
-                    <i className="icon_calendar" />
+                <form action='#'>
+                  <div className='check-date'>
+                    <label htmlFor='date-in'>Check In:</label>
+                    <input type='date' className='date-input' id='date-in' />
                   </div>
-                  <div className="check-date">
-                    <label htmlFor="date-out">Check Out:</label>
-                    <input type="text" className="date-input" id="date-out" />
-                    <i className="icon_calendar" />
+                  <div className='check-date'>
+                    <label htmlFor='date-out'>Check Out:</label>
+                    <input type='date' className='date-input' id='date-out' />
                   </div>
-                  <div style={{ width: "100%" }} className="select-option">
-                    <label htmlFor="guest">Guests:</label>
+                  <div style={{ width: '100%' }} className='select-option'>
+                    <label htmlFor='guest'>Guests:</label>
                     <select
-                      className="custom-select"
-                      style={{ width: "100%", height: "50px" }}
-                      id="guest"
-                    >
+                      className='custom-select'
+                      style={{ width: '100%', height: '50px' }}
+                      id='guest'>
                       <option defaultValue={1}>1 person</option>
                       <option defaultValue={2}>2 persons</option>
                       <option defaultValue={3}>3 persons</option>
@@ -400,7 +367,7 @@ const RoomDetail = () => {
                       <option defaultValue={7}>7 persons</option>
                     </select>
                   </div>
-                  <button type="button">Check Availability</button>
+                  <button type='button'>Check Availability</button>
                 </form>
               </div>
             </div>
@@ -408,7 +375,7 @@ const RoomDetail = () => {
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default RoomDetail;
+export default RoomDetail
