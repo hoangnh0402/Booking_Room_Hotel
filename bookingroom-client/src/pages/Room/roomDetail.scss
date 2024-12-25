@@ -20,8 +20,8 @@
     appearance: none;
 
     &::before {
-      color: #fff;
-      content: "\f005";
+      color: black;
+      content: '\f005';
       font-family: fontAwesome;
       font-size: 17px;
     }
@@ -33,4 +33,32 @@
   input:checked::before {
     color: #f5b917;
   }
+}
+.room-booking {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 4px 4px 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+}
+.room-detail__booking {
+  height: 40px !important;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 16px 28px 15px;
+  background: #5892b5;
+  color: #ffffff;
+  border-radius: 8px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+}
+.date-input {
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #2c3e50;
+  background: white;
+  transition: border-color 0.2s;
 }
