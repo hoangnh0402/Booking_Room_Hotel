@@ -118,11 +118,11 @@ const BillModal = ({ displayModal, statusModal, messageModal, callback, booking,
                           <div className='col-md-6 text-md-end'>
                             <div className='text-muted mb-2'>Payment To</div>
                             <strong>Hotel Booking</strong>
-                            <p className='fs-sm'>
-                              Thanh Xuan, Ha Noi
+                            <p className="fs-sm">
+                              Bac Tu Liem, Ha Noi
                               <br />
-                              <a href='#!' className='text-purple'>
-                                thanhhuonghotelluxury@gmail.com
+                              <a href="#!" className="text-purple">
+                                nguyenhuyhoangpt0402@gmail.com
                               </a>
                             </p>
                           </div>
