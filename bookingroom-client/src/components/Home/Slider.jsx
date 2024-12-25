@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom'
 
 const Slider = () => {
   return (
+
     <section className='hero-section'>
       <div className='container'>
         <div className='row'>
