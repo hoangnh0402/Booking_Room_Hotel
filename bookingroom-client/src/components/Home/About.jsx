@@ -11,10 +11,10 @@ const About = () => {
             <div className="about-text">
               <div className="section-title">
                 <span>About Us</span>
-                <h2>THDD Hotel</h2>
+                <h2>Welcome to HIT Hotel</h2>
               </div>
               <p className="f-para">
-                THDD Hotel nơi cung cấp các phòng nghỉ tiện nghi, sang
+                HIT Hotel là nơi cung cấp các phòng nghỉ tiện nghi, sang
                 trọng và các dịch vụ tiện ích cho quý khách hàng khi trải nghiệm
                 dừng chân tại đây.
               </p>

@@ -14,7 +14,7 @@ const Introduction = () => {
                 <div className='about-title'>
                   <h2>Welcome To HIT Hotel.</h2>
                   <p>
-                    HIT Hotel nơi cung cấp các phòng nghỉ tiện nghi, sang trọng và các dịch vụ tiện
+                    HIT Hotel là nơi cung cấp các phòng nghỉ tiện nghi, sang trọng và các dịch vụ tiện
                     ích cho quý khách hàng khi trải nghiệm dừng chân tại đây. Định hướng của HIT
                     Hotel mong muốn trở thành khách sạn đáng tin cậy đối với khách hàng, chủ sở hữu,
                     nhân viên và cộng đồng với các dịch vụ tận tình và chu đáo mang lại sự thư giãn
