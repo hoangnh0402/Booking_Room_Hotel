@@ -91,7 +91,7 @@ Luồng hoạt động của hệ thống được thiết kế theo kiến trú
         - Spring Boot trả kết quả về API Gateway dưới dạng JSON.
         - API Gateway chuyển kết quả về client (Browser/Dashboard).
 
-<img loading="lazy" src="./docs/images/system_architecture.svg.svg" alt="Architecture" width="100%" height=600>
+<img loading="lazy" src="./docs/images/system_architecture.svg" alt="Architecture" width="100%" height=600>
 
 ## Đóng Góp
 
