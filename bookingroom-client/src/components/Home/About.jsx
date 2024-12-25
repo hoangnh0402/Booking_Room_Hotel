@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import about1 from "../../assets/img/about/about-1.jpg";
 import about2 from "../../assets/img/about/about-2.jpg";
 

@@ -9,6 +9,7 @@ import { unwrapResult } from '@reduxjs/toolkit'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
+import ScrollTop from '../../components/ScrollTop/ScrollTop'
 
 const Rooms = () => {
   const dispatch = useDispatch()
@@ -71,7 +72,10 @@ const Rooms = () => {
                         }}
                         className='owl-main hero-slider'
                         items={1}
-                        loop>
+                        loop
+                        autoplay
+                        autoplayTimeout={3000}
+                        autoplayHoverPause>
                         {room?.medias?.map((media) => {
                           return (
                             <div className='item hs-item set-bg'>
@@ -196,6 +200,7 @@ const Rooms = () => {
         </div>
       </section>
       {/* Rooms Section End */}
+      <ScrollTop/>
     </div>
   )
 }

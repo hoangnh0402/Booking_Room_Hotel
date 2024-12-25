@@ -3,7 +3,7 @@ import Header from '../../components/Header'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchGetBooking } from '../../store/bookingSlice/bookingSlice'
 import { unwrapResult } from '@reduxjs/toolkit'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import storageService from '../../services/storage.service'
 import { fetchGetProductsByService } from '../../store/hotelServiceSlice/hotelServiceSlice'
@@ -13,7 +13,7 @@ const BookingDetail = () => {
   const [booking, setBooking] = useState()
   const [products, setProducts] = useState({})
   let { bookingId } = useParams()
-
+  const navigate = useNavigate()
   const user = useSelector((state) => state.user.value)
   useEffect(() => {
     ;(async () => {
@@ -248,6 +248,7 @@ const BookingDetail = () => {
                       console.log('result', result)
                       if (result.value.status === 'SUCCESS') {
                         Swal.fire('Cancel booking successfully', '', 'success')
+                        navigate('/booking-cart')
                       } else {
                         Swal.fire('Some error')
                       }

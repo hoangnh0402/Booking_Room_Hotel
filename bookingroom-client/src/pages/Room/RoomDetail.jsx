@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Title from '../../components/Title'
 import Header from '../../components/Header'
-import {  useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { unwrapResult } from '@reduxjs/toolkit'
@@ -11,6 +11,7 @@ import {
   fetchRatingByRoomId,
 } from '../../store/roomSlice/roomSlice'
 import './roomDetail.scss'
+import ScrollTop from '../../components/ScrollTop/ScrollTop'
 
 const RoomDetail = () => {
   let { roomId } = useParams()
@@ -412,6 +413,7 @@ const RoomDetail = () => {
           </div>
         </div>
       </section>
+      <ScrollTop/>
     </div>
   )
 }

@@ -65,7 +65,10 @@ const Slider = () => {
         style={{ position: 'absolute', top: '0' }}
         className='owl-main hero-slider'
         items={1}
-        loop>
+        loop
+        autoplay
+        autoplayTimeout={3000}
+        autoplayHoverPause>
         <div className='item hs-item set-bg'>
           <img style={{ height: '100%' }} src={slider1} alt='' />
         </div>

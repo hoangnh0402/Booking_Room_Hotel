@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux'
 import { fetchGetAvailableRooms } from '../store/roomSlice/roomSlice'
 import { unwrapResult } from '@reduxjs/toolkit'
 import { fetchGetPosts } from '../store/postSlice/postSlice'
+import ScrollTop from '../components/ScrollTop/ScrollTop'
 
 const Home = () => {
   const dispatch = useDispatch()
@@ -51,6 +52,7 @@ const Home = () => {
       <Testimonials />
       <Blog posts={posts} />
       <Footer />
+      <ScrollTop/>
     </div>
   )
 }
