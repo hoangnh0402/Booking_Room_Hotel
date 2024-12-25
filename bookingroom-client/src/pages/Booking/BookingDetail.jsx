@@ -77,8 +77,8 @@ const BookingDetail = () => {
                 <div className='rd-text'>
                   <div className='rd-title'>
                     <img
-                      style={{ width: '100%', height: '450px' , borderRadius: '8px'}}
-                      src={ booking?.rooms[0].medias[0].url}
+                      style={{ width: '100%', height: '450px', borderRadius: '8px' }}
+                      src={booking?.rooms[0].medias[0].url}
                       alt=''
                     />
                     <h3> {booking && booking.rooms[0].name}</h3>
@@ -132,7 +132,7 @@ const BookingDetail = () => {
                     <div className='check-date'>
                       <label htmlFor='date-in'>Check In:</label>
                       <input
-                        type='text'
+                        type='date'
                         className='date-input'
                         id='date-in'
                         value={booking && booking.checkIn}
@@ -142,7 +142,7 @@ const BookingDetail = () => {
                     <div className='check-date'>
                       <label htmlFor='date-out'>Check Out:</label>
                       <input
-                        type='text'
+                        type='date'
                         className='date-input'
                         id='date-out'
                         value={booking && booking.checkOut}

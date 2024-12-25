@@ -114,6 +114,18 @@ const RoomDetail = () => {
         // handle result here
       })
   }
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  useEffect(() => {
+    if (!room?.medias || room?.medias.length === 0) return // Nếu dữ liệu chưa sẵn sàng, thoát khỏi useEffect
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % room?.medias.length)
+    }, 3000) // Tự động chuyển slide sau 3 giây
+
+    // Cleanup khi component bị unmount
+    return () => clearInterval(interval)
+  }, [room?.medias])
 
   return (
     <div>
@@ -126,7 +138,7 @@ const RoomDetail = () => {
           <div className='row'>
             <div className='col-lg-8'>
               <div className='room-details-item'>
-                <OwlCarousel
+                {/* <OwlCarousel
                   style={{
                     // position: "absolute",
                     top: '0',
@@ -138,16 +150,45 @@ const RoomDetail = () => {
                   {room?.medias?.map((media) => {
                     return (
                       <div className='item hs-item set-bg'>
-                        <img style={{ width: '100%', height: '450px' }} src={media.url} alt='' />
-                        {/* <img
-                          style={{ height: "250px", width: "100%" }}
+                        <img
+                          style={{ width: '100%', height: '450px', borderRadius: '8px' }}
                           src={media.url}
-                          alt=""
-                        /> */}
+                          alt=''
+                        />
                       </div>
                     )
                   })}
-                </OwlCarousel>
+                </OwlCarousel> */}
+                <div
+                  style={{
+                    overflow: 'hidden',
+                    position: 'relative',
+                    width: '100%',
+                  }}
+                  className='hero-slider'>
+                  <div
+                    style={{
+                      display: 'flex',
+                      transform: `translateX(-${currentIndex * 100}%)`,
+                      transition: 'transform 0.5s ease-in-out',
+                    }}>
+                    {room?.medias?.map((media, index) => (
+                      <div
+                        key={index}
+                        className='item hs-item set-bg'
+                        style={{
+                          flex: '0 0 100%', // Slide chiếm 100% chiều rộng
+                          maxWidth: '100%',
+                        }}>
+                        <img
+                          style={{ width: '100%', height: '450px', borderRadius: '8px' }}
+                          src={media.url}
+                          alt=''
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
                 {/* <img
                   style={{ width: "100%", height: "450px" }}
                   src={room && room.medias?.[0]?.url}
