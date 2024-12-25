@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,41 +7,33 @@ import {
   Title,
   Tooltip,
   Legend,
-} from "chart.js";
-import { faker } from "@faker-js/faker";
+} from 'chart.js'
+import { faker } from '@faker-js/faker'
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
 export const lineOptions = {
   responsive: true,
   plugins: {
     legend: {
-      position: "top",
+      position: 'top',
     },
     title: {
       display: true,
-      text: "Biểu đồ thống kê doanh thu khách sạn",
+      text: 'Biểu đồ thống kê doanh thu khách sạn',
     },
   },
-};
+}
 
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July']
 export const lineData = {
   labels,
   datasets: [
     {
-      label: "Doanh thu",
+      label: 'Doanh thu',
       data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: "#EA7C31",
-      backgroundColor: "#EA7C31",
+      borderColor: '#EA7C31',
+      backgroundColor: '#EA7C31',
     },
     // {
     //   label: "Dataset 2",
@@ -51,4 +42,4 @@ export const lineData = {
     //   backgroundColor: "rgba(53, 162, 235, 0.5)",
     // },
   ],
-};
+}

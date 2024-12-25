@@ -1,6 +1,7 @@
 import aboutUs1 from '../../assets/img/about/about-p1.jpg'
 import aboutUs2 from '../../assets/img/about/about-p2.jpg'
 import aboutUs3 from '../../assets/img/about/about-p3.jpg'
+import ScrollTop from '../ScrollTop/ScrollTop'
 import './Introduction.scss'
 const Introduction = () => {
   return (
@@ -11,10 +12,10 @@ const Introduction = () => {
             <div className='about-grid'>
               <div className='about-info'>
                 <div className='about-title'>
-                  <h2>Welcome To THDD Hotel.</h2>
+                  <h2>Welcome To HIT Hotel.</h2>
                   <p>
-                    THDD Hotel nơi cung cấp các phòng nghỉ tiện nghi, sang trọng và các dịch vụ tiện
-                    ích cho quý khách hàng khi trải nghiệm dừng chân tại đây. Định hướng của THDD
+                    HIT Hotel là nơi cung cấp các phòng nghỉ tiện nghi, sang trọng và các dịch vụ tiện
+                    ích cho quý khách hàng khi trải nghiệm dừng chân tại đây. Định hướng của HIT
                     Hotel mong muốn trở thành khách sạn đáng tin cậy đối với khách hàng, chủ sở hữu,
                     nhân viên và cộng đồng với các dịch vụ tận tình và chu đáo mang lại sự thư giãn
                     và thoải mái nhất.
@@ -99,7 +100,7 @@ const Introduction = () => {
           </div>
         </div>
       </section>
-      {/* <ScrollTop /> */}
+      <ScrollTop />
     </>
   )
 }

@@ -1,10 +1,8 @@
-import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
-import avatar from '../assets/img/avatar.jpg'
 import storageService from '../services/storage.service'
-import logo from '../assets/img/logo-hotel.png'
+import logo from '../assets/img/hit-hotel.jpg'
 
 const Header = () => {
   const location = useLocation()
@@ -54,7 +52,7 @@ const Header = () => {
                           <li style={{ padding: '8px' }}>
                             <Link to='/user'>My Account</Link>
                           </li>
-                          {user.roleName == 'ROLE_ADMIN' && (
+                          {user.roleName === 'ROLE_ADMIN' && (
                             <li style={{ padding: '8px' }}>
                               <Link to='/admin/users'>Manament</Link>
                             </li>
@@ -85,7 +83,7 @@ const Header = () => {
           <div className='row'>
             <div className='col-lg-2'>
               <div className='logoo' style={{ width: '100px', height: '100px' }}>
-                <Link to='/' style={{ display: 'block', width: '100%', height: '100%' }}>
+                <Link to='/' style={{ display: 'block', width: '200%', height: '100%' }}>
                   <img style={{ width: '100%', height: '100%' }} src={logo} alt='' />
                 </Link>
               </div>
@@ -94,13 +92,13 @@ const Header = () => {
               <div className='nav-menu'>
                 <nav className='mainmenu'>
                   <ul>
-                    <li className={pathName == '/' ? 'active' : ''}>
+                    <li className={pathName === '/' ? 'active' : ''}>
                       <Link to={'/'}>HOME</Link>
                     </li>
-                    <li className={pathName == '/rooms' ? 'active' : ''}>
+                    <li className={pathName === '/rooms' ? 'active' : ''}>
                       <Link to={'/rooms'}>ROOMS</Link>
                     </li>
-                    <li className={pathName == '/about-us' ? 'active' : ''}>
+                    <li className={pathName === '/about-us' ? 'active' : ''}>
                       <Link to={'/about-us'}>ABOUT US</Link>
                     </li>
                     <li>

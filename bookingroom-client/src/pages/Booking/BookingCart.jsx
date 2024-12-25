@@ -97,14 +97,14 @@ const BookingCart = () => {
                           <span
                             style={{
                               color:
-                                booking.status == "PENDING"
+                                booking.status === "PENDING"
                                   ? "#f50"
                                   : "#87d068",
                             }}
                           >
-                            {booking.status == "PENDING"
+                            {booking.status === "PENDING"
                               ? "Chưa thanh toán"
-                              : booking.status == "CANCEL"
+                              : booking.status === "CANCEL"
                               ? "Đã hủy"
                               : "Đã thanh toán"}
                           </span>

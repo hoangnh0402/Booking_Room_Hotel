@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../components/Header'
-import roomDetail from '../../assets/img/room/room-details.jpg'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchGetBooking } from '../../store/bookingSlice/bookingSlice'
 import { unwrapResult } from '@reduxjs/toolkit'
-import { useParams } from 'react-router-dom'
-import OwlCarousel from 'react-owl-carousel'
+import { useNavigate, useParams } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import storageService from '../../services/storage.service'
 import { fetchGetProductsByService } from '../../store/hotelServiceSlice/hotelServiceSlice'
@@ -15,7 +13,7 @@ const BookingDetail = () => {
   const [booking, setBooking] = useState()
   const [products, setProducts] = useState({})
   let { bookingId } = useParams()
-
+  const navigate = useNavigate()
   const user = useSelector((state) => state.user.value)
   useEffect(() => {
     ;(async () => {
@@ -28,7 +26,7 @@ const BookingDetail = () => {
             const result = await dispatch(fetchGetProductsByService(service.service.id))
               .then(unwrapResult)
               .then((originalPromiseResult) => {
-                if (originalPromiseResult.status == 'SUCCESS') {
+                if (originalPromiseResult.status === 'SUCCESS') {
                   products[service.service.id] = originalPromiseResult.data.items
                   setProducts(products)
                 }
@@ -77,8 +75,8 @@ const BookingDetail = () => {
                 <div className='rd-text'>
                   <div className='rd-title'>
                     <img
-                      style={{ width: '100%', height: '450px' , borderRadius: '8px'}}
-                      src={ booking?.rooms[0].medias[0].url}
+                      style={{ width: '100%', height: '450px', borderRadius: '8px' }}
+                      src={booking?.rooms[0].medias[0].url}
                       alt=''
                     />
                     <h3> {booking && booking.rooms[0].name}</h3>
@@ -132,7 +130,7 @@ const BookingDetail = () => {
                     <div className='check-date'>
                       <label htmlFor='date-in'>Check In:</label>
                       <input
-                        type='text'
+                        type='date'
                         className='date-input'
                         id='date-in'
                         value={booking && booking.checkIn}
@@ -142,7 +140,7 @@ const BookingDetail = () => {
                     <div className='check-date'>
                       <label htmlFor='date-out'>Check Out:</label>
                       <input
-                        type='text'
+                        type='date'
                         className='date-input'
                         id='date-out'
                         value={booking && booking.checkOut}
@@ -248,8 +246,9 @@ const BookingDetail = () => {
                       // allowOutsideClick: () => !Swal.isLoading(),
                     }).then((result) => {
                       console.log('result', result)
-                      if (result.value.status == 'SUCCESS') {
+                      if (result.value.status === 'SUCCESS') {
                         Swal.fire('Cancel booking successfully', '', 'success')
+                        navigate('/booking-cart')
                       } else {
                         Swal.fire('Some error')
                       }
