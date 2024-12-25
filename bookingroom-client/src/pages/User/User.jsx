@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from 'react'
 import './user.scss'
 import avatar from '../../assets/img/avatar.jpg'
@@ -7,6 +8,7 @@ import { Link } from 'react-router-dom'
 import { fetchUpdateUser } from '../../store/userSlice/userSlice'
 import { unwrapResult } from '@reduxjs/toolkit'
 import Swal from 'sweetalert2'
+import ScrollTop from '../../components/ScrollTop/ScrollTop'
 
 const User = () => {
   const user = useSelector((state) => state.user.value)
@@ -277,6 +279,7 @@ const User = () => {
           </div>
         </div>
       </div>
+      <ScrollTop />
     </>
   )
 }
