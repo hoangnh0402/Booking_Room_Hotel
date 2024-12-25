@@ -16,7 +16,7 @@ const Slider = () => {
         <div className="row">
           <div className="col-lg-6">
             <div className="hero-text">
-              <h1>HIT Hotel</h1>
+              <h1>THDD Hotel</h1>
               <p>
                 Dưới đây là trang web đặt phòng khách sạn tốt nhất, bao gồm các
                 đề xuất về tìm phòng khách sạn giá rẻ và dịch vụ.

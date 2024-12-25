@@ -139,10 +139,10 @@ const BillModal = ({
                             <div className="text-muted mb-2">Payment To</div>
                             <strong>Hotel Booking</strong>
                             <p className="fs-sm">
-                              Thanh Xuan, Ha Noi
+                              Bac Tu Liem, Ha Noi
                               <br />
                               <a href="#!" className="text-purple">
-                                thanhhuonghotelluxury@gmail.com
+                                nguyenhuyhoangpt0402@gmail.com
                               </a>
                             </p>
                           </div>
