@@ -73,7 +73,7 @@ const Rooms = () => {
                 return (
                   <div key={room.id} className="col-lg-4 col-md-6">
                     <div
-                      style={{ boxShadow: "0 0 10px #8888" }}
+                      style={{ boxShadow: "0 0 10px #8888", borderRadius: "8px" }}
                       className="room-item"
                     >
                       <OwlCarousel
@@ -90,7 +90,7 @@ const Rooms = () => {
                           return (
                             <div className="item hs-item set-bg">
                               <img
-                                style={{ height: "250px", width: "100%" }}
+                                style={{ height: "250px", width: "100%" ,  borderRadius: "8px 8px 0 0"}}
                                 src={media.url}
                                 alt=""
                               />
