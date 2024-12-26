@@ -1,0 +1,24 @@
+server:
+  port: 8080
+  socket:
+    host: 0.0.0.0
+    port: 9200
+spring:
+  jackson:
+    property-naming-strategy: LOWER_CAMEL_CASE
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+app:
+  security:
+    server-key: Hotel@2024
+    jwt:
+      secret-key: 52344E62DC399D1A15AC51A65F1DE
+      access-expire: 1440
+      refresh-expire: 60
+
+logging:
+  level:
+    com.hit: debug

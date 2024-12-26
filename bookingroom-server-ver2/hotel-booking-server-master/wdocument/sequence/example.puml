@@ -1,0 +1,68 @@
+@startuml
+
+skinparam shadowing false
+skinparam responseMessageBelowArrow false
+skinparam DefaultFontColor #222
+skinparam TitleFontSize 18
+skinparam NoteBorderColor #teal
+skinparam NoteBackgroundColor #powderblue
+skinparam NoteFontColor #444
+skinparam DatabaseBorderColor #teal
+skinparam DatabaseBackgroundColor #bisque
+
+skinparam sequence {
+    ParticipantBorderThickness 1
+    ParticipantBorderColor #teal
+    ParticipantBackgroundColor #teal
+    ParticipantFontColor #white
+    ParticipantFontSize 10
+    ParticipantFontStyle bold
+
+LifeLineBorderColor #teal
+LifeLineBackgroundColor #aliceblue
+
+ArrowColor #teal
+ActorBorderColor #teal
+
+GroupBorderThickness 1
+GroupBorderColor #teal
+GroupHeaderFontColor #white
+GroupBackgroundColor #teal
+GroupFontColor #teal
+}
+
+autonumber
+
+title Login
+actor User
+participant "Web" as WEB
+participant "Backend" as BE
+database PostgresDB
+database Redis
+
+User -> WEB: Thực hiện login Website
+WEB -> BE: Gọi API login
+BE -> BE: Validate thông tin request
+alt Validate thất bại
+BE --> WEB: Trả về kết quả thất bại
+WEB --> User: Hiển thị lỗi cho User
+end
+BE -> PostgresDB: Truy vấn thông tin login
+PostgresDB --> BE: Trả về kết quả
+alt Không có dữ liệu
+BE --> WEB: Trả về kết quả thất bại
+WEB --> User: Hiển thị lỗi cho User
+end
+
+BE -> BE: Xác thực thông tin login
+alt Xác thực thông tin thất bại
+BE --> WEB: Trả về kết quả thất bại
+WEB --> User: Hiển thị lỗi cho User
+end
+
+BE -> Redis: Lưu thông tin User lên Redis
+BE --> WEB: Trả về kết quả thành công và thông tin User
+
+WEB --> User: Hiển thị giao diện trang chủ cho User
+
+@enduml

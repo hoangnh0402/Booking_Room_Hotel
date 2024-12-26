@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.hit.hotel</groupId>
+        <artifactId>hotel-socket</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <artifactId>hotel-socket-server</artifactId>
+    <version>1.0</version>
+    <name>hotel-socket-server</name>
+    <description>Hotel socket server module</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.hit</groupId>
+            <artifactId>cache-starter</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hit.hotel</groupId>
+            <artifactId>hotel-socket-client</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.corundumstudio.socketio/netty-socketio -->
+        <dependency>
+            <groupId>com.corundumstudio.socketio</groupId>
+            <artifactId>netty-socketio</artifactId>
+            <version>2.0.9</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.0</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

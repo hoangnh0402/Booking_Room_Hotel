@@ -1,0 +1,54 @@
+server:
+  port: 8083
+spring:
+  jackson:
+    property-naming-strategy: LOWER_CAMEL_CASE
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+app:
+  auth-api-path-prefix: /hotel-auth
+  security:
+    server-key: Hotel@2024
+    jwt:
+      secret-key: 52344E62DC399D1A15AC51A65F1DE
+      access-expire: 1440
+      refresh-expire: 60
+  mail:
+    enable: true
+    username: bloomi.hit@gmail.com
+    password: mmxibmamsyfrbood
+  cloudinary:
+    enable: true
+    cloud-name: ds18kbgr2
+    api-key: 158888471491425
+    api-secret: XzVY7TxeP5w6MR0yNaNTntXofJ4
+  internal-cache:
+    enable: false
+    caffeine:
+      spec: maximumSize=10000, expireAfterWrite=60s, recordStats, weakKeys, weakValues
+  external-cache:
+    enable: true
+    application-cache: HOTEL-AUTH
+    delimiter: '::'
+    cache-default-expire: 864000
+    cache-expirations:
+      example-cache: 3600
+    redisson:
+      single-server-config:
+        address: redis://localhost:6379
+        idle-connection-timeout: 10000
+        connect-timeout: 30000
+        timeout: 30000
+        retry-attempts: 3
+        retry-interval: 1500
+        subscriptions-per-connection: 5
+        client-name:
+        keep-alive: false
+        tcp-no-delay: false
+
+logging:
+  level:
+    com.hit: debug

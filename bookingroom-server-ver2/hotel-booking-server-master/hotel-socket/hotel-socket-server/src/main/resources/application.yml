@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    group:
+      default: socket-local
+      local: socket-local
+      dev: socket-dev
+      prod: socket-prod
+    active: dev

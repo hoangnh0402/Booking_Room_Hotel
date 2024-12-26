@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    group:
+      default: auth-local,repo-local
+      local: auth-local,repo-local
+      dev: auth-dev,repo-dev
+      prod: auth-prod,repo-prod
+    active: local

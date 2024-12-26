@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    group:
+      default: admin-local,repo-local
+      local: admin-local,repo-local
+      dev: admin-dev,repo-dev
+      prod: admin-prod,repo-prod
+    active: local
