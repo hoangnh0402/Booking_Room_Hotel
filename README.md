@@ -1,4 +1,4 @@
-# PTPM-HDV---20241IT6151004---C6-789---Nhom-3
+# Booking_Room_Hotel
 ## Dự án xây dựng Website hỗ trợ đặt phòng khách sạn cho HIT Hotel.
 ## Mô Tả
 
